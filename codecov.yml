@@ -16,11 +16,13 @@ coverage:
   range: "60..80"
   round: down
   status:
-    changes: false
-    default_rules:
-      flag_coverage_not_uploaded_behavior: include
-    patch: true
-    project: true
+    project:
+      default:
+        target: 80%
+    patch:
+      default:
+        target: 80%
+    changes: no
 
 github_checks:
   annotations: true
