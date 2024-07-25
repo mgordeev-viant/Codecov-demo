@@ -14,7 +14,7 @@ func TestAuction(t *testing.T) {
     }
 
     if highestBid.Bidder != "Bob" || highestBid.Amount != 200 {
-        t.Errorf("Expected highest bid to be Bob with amount 200, got %s with amount %d", highestBid.Bidder, highestBid.Amount)
+        t.Errorf("Expected highest bid to be Bob with amount 200, but got %s with amount %d", highestBid.Bidder, highestBid.Amount)
 
     }
 }
