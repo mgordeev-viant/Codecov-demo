@@ -2,6 +2,7 @@ package bidder
 
 import "testing"
 
+
 func TestAuction(t *testing.T) {
     auction := NewAuction()
     auction.PlaceBid(Bid{Bidder: "Alice", Amount: 100})
@@ -14,5 +15,6 @@ func TestAuction(t *testing.T) {
 
     if highestBid.Bidder != "Bob" || highestBid.Amount != 200 {
         t.Errorf("Expected highest bid to be Bob with amount 200, got %s with amount %d", highestBid.Bidder, highestBid.Amount)
+
     }
 }

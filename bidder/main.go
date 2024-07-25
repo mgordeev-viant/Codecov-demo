@@ -1,5 +1,6 @@
 package bidder
 
+
 import (
     "errors"
     "sort"
@@ -30,4 +31,5 @@ func (a *Auction) GetHighestBid() (Bid, error) {
         return a.Bids[i].Amount > a.Bids[j].Amount
     })
     return a.Bids[0], nil
+
 }

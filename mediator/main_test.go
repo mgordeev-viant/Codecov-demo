@@ -2,6 +2,7 @@ package mediator
 
 import "testing"
 
+
 func TestMediator(t *testing.T) {
     mediator := NewMediator()
     user := &User{Name: "John", Age: 30}
@@ -14,5 +15,6 @@ func TestMediator(t *testing.T) {
     mediator.UpdateUser("John", "Jane")
     if mediator.GetUser("Jane").Name != "Jane" {
         t.Error("Expected user name to be Jane")
+
     }
 }

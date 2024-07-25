@@ -24,6 +24,7 @@ coverage:
         target: 80%
     changes: true
 
+
 github_checks:
   annotations: true
 

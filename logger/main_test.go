@@ -1,5 +1,6 @@
 package logger
 
+
 import (
     "os"
     "testing"
