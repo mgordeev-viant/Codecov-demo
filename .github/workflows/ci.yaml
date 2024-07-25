@@ -18,11 +18,22 @@ jobs:
     - name: Install dependencies
       run: go mod tidy
 
-    - name: Run tests
-      run: go test -v ./... -coverprofile=coverage.out
+    - name: Run tests for logger
+      run: go test -v ./logger -coverprofile=logger_coverage.out
 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
+    - name: Run tests for mediator
+      run: go test -v ./mediator -coverprofile=mediator_coverage.out
+
+    - name: Run tests for bidder
+      run: go test -v ./bidder -coverprofile=bidder_coverage.out
+
+    - name: Merge coverage reports
+      run: |
+        go install github.com/wadey/gocovmerge@latest
+        gocovmerge logger_coverage.out mediator_coverage.out bidder_coverage.out > coverage.out
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: mgordeev-viant/Codecov-demo
