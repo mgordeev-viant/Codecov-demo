@@ -27,14 +27,14 @@ jobs:
     - name: Run tests for bidder
       run: go test -v ./bidder -coverprofile=bidder_coverage.out
 
-    - name: Merge coverage reports
-      run: |
-        go install github.com/wadey/gocovmerge@latest
-        gocovmerge logger_coverage.out mediator_coverage.out bidder_coverage.out > coverage.out
+    # - name: Merge coverage reports
+    #   run: |
+    #     go install github.com/wadey/gocovmerge@latest
+    #     gocovmerge logger_coverage.out mediator_coverage.out bidder_coverage.out > coverage.out
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        file: coverage.out
+        # file: coverage.out
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: mgordeev-viant/Codecov-demo
