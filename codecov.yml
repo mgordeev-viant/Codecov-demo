@@ -22,7 +22,7 @@ coverage:
     patch:
       default:
         target: 80%
-    changes: no
+    changes: true
 
 github_checks:
   annotations: true

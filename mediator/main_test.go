@@ -2,9 +2,17 @@ package mediator
 
 import "testing"
 
-func TestAdd(t *testing.T) {
-    result := Add(1, 2)
-    if result != 3 {
-        t.Errorf("Add(1, 2) = %d; want 3", result)
+func TestMediator(t *testing.T) {
+    mediator := NewMediator()
+    user := &User{Name: "John", Age: 30}
+    mediator.AddUser(user)
+
+    if mediator.GetUser("John").Name != "John" {
+        t.Error("Expected user name to be John")
+    }
+
+    mediator.UpdateUser("John", "Jane")
+    if mediator.GetUser("Jane").Name != "Jane" {
+        t.Error("Expected user name to be Jane")
     }
 }
