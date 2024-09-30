@@ -25,7 +25,7 @@ func (a *Auction) PlaceBid(bid Bid) {
 
 func (a *Auction) GetHighestBid() (Bid, error) {
     if len(a.Bids) == 0 {
-        return Bid{}, errors.New("no bids placed!")
+        return Bid{}, errors.New("no bids placed")
     }
     sort.SliceStable(a.Bids, func(i, j int) bool {
         return a.Bids[i].Amount > a.Bids[j].Amount
