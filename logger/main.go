@@ -32,6 +32,6 @@ func LogMessage(message string, level string) {
     case "ERROR":
         Error.Println(message)
     default:
-        fmt.Println("Unknown log level!")
+        fmt.Println("Unknown log level")
     }
 }

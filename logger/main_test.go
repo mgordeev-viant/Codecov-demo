@@ -14,7 +14,7 @@ func TestLogMessage(t *testing.T) {
     defer file.Close()
     InitLog(file, file, file)
     
-    LogMessage("This is an info message:", "INFO")
-    LogMessage("This is a warning message:", "WARNING")
-    LogMessage("This is an error message:", "ERROR")
+    LogMessage("This is an info message", "INFO")
+    LogMessage("This is a warning message", "WARNING")
+    LogMessage("This is an error message", "ERROR")
 }
